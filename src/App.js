@@ -5,18 +5,25 @@ import './App.scss';
 import Header from './components/Header';
 import Headline from './components/Headline';
 
-function App() {
-  return (
-    <div>
-      <Header />
-      <section className="main">
-        <Headline header="Posts"  desc="Click the button to render posts!"/>
-      </section>
-      
-    </div>
-    
+const tempArr = [{
+  name: 'Eben',
+  age: 24,
+  isTall: false
+}]
 
-  );
+class App extends React.Component {
+
+    render(){
+        return (
+          <div>
+            <Header />
+            <section className="main">
+              <Headline header="Posts" tempArr={tempArr} desc="Click the button to render posts!"/>
+            </section>
+            
+          </div>
+        );
+    }
 }
 
 export default App;

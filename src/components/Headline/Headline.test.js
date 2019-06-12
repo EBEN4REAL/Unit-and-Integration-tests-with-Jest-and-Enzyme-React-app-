@@ -4,6 +4,8 @@ import React from 'react';
 import enzymeAdapter from 'enzyme-adapter-react-16';
 import Enzyme from 'enzyme';
 import {findByTestAttribute} from '../../../utils/tests';
+import checkPropTypes from 'check-prop-types';
+import {checkProps} from '../../../utils/tests';
 
 Enzyme.configure({
 	adapter: new enzymeAdapter()
@@ -15,6 +17,25 @@ const setUpComponent = (props={}) => {
 }
 
 describe("Headline Component" , () => {
+
+	describe("Checking props types" , () => {
+		it("Should not show any warning" , () => {
+
+			const expectedProps = {
+				header: 'Test Header',
+				desc: 'Test desc',
+				tempArr: [{
+					name: 'Test Name',
+					age: 'Test age',
+					isTall: true
+				}]
+			}
+			const propsErr = checkProps(Headline, expectedProps)
+			expect(propsErr).toBeUndefined();
+		});
+	});
+
+
 	describe("Have props", () => {
 
 		let wrapper;

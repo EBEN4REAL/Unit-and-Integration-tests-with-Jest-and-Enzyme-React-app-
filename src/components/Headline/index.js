@@ -21,7 +21,12 @@ class HeadLine extends React.Component {
 
 HeadLine.propTypes = {
 	header: propTypes.string,
-	desc: propTypes.string
+	desc: propTypes.string,
+	tempArr: propTypes.arrayOf(propTypes.shape({
+		name: propTypes.string,
+		age: propTypes.age,
+		isTall: propTypes.bool
+	}))
 }
 
 export default HeadLine;
