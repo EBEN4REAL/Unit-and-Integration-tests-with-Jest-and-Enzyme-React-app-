@@ -10,7 +10,7 @@ function App() {
     <div>
       <Header />
       <section className="main">
-        <Headline />
+        <Headline header="Posts"  desc="Click the button to render posts!"/>
       </section>
       
     </div>
